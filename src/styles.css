@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Site-wide gradient (matches your provided reference image) */
+.bg-site {
+  background: linear-gradient(180deg, #2ba5fe 0%, #1d78d8 50%, #104bb1 100%);
+}
+
+/* Optional: a subtle "film" overlay so text remains readable on bright blues */
+.film-overlay {
+  background:
+    radial-gradient(900px 600px at 20% 20%, rgba(255, 255, 255, 0.10), transparent 60%),
+    radial-gradient(900px 700px at 80% 30%, rgba(0, 0, 0, 0.18), transparent 60%),
+    linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.22));
+}
+
+/* Better tap targets on mobile */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent layout shift when the side panel opens */
+body.lock-scroll {
+  overflow: hidden;
+}
