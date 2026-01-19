@@ -1,5 +1,5 @@
 import Container from './Container'
-import logoDark from '/logo-dark.svg'
+import logoDark from '/logo-light.svg'
 
 export default function TopBar({ isPanelOpen, onTogglePanel, email }) {
   return (

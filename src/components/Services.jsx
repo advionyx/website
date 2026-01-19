@@ -9,7 +9,7 @@ export default function Services({ services = [] }) {
         <SectionHeader
           eyebrow="SERVICE LINES"
           title="Built for execution, not decks."
-          subtitle="Service areas are listed openly for quick scanning."
+          // subtitle="Service areas are listed openly for quick scanning."
         />
 
         <div className="mt-10 space-y-4">
