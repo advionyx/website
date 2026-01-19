@@ -1,28 +1,20 @@
-import { useState } from 'react'
 import Container from './Container'
 import SectionHeader from './SectionHeader'
 import ServiceLine from './ServiceLine'
 
-export default function Services({ services }) {
-  const [openId, setOpenId] = useState(services?.[0]?.id)
-
+export default function Services({ services = [] }) {
   return (
-    <section id="services" className="relative border-t border-white/15">
+    <section id="services" className="relative border-t border-primary-200/70">
       <Container className="py-16 sm:py-20">
         <SectionHeader
-          eyebrow="SERVICES"
-          title="Three lines of service. One standard: delivery."
-          subtitle="Pick what you need. We can run end-to-end or plug into your team."
+          eyebrow="SERVICE LINES"
+          title="Built for execution, not decks."
+          subtitle="Service areas are listed openly for quick scanning."
         />
 
-        <div className="mt-10 space-y-3">
+        <div className="mt-10 space-y-4">
           {services.map((s) => (
-            <ServiceLine
-              key={s.id}
-              service={s}
-              open={openId === s.id}
-              onToggle={() => setOpenId((prev) => (prev === s.id ? null : s.id))}
-            />
+            <ServiceLine key={s.id} service={s} />
           ))}
         </div>
       </Container>

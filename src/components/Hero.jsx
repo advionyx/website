@@ -1,80 +1,94 @@
 import Container from './Container'
 
-export default function Hero({ about }) {
+function Chip({ children }) {
   return (
-    <section id="about" className="relative">
-      <Container className="py-16 sm:py-20 lg:py-24">
-        <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-8">
-            <p className="text-xs tracking-[0.22em] uppercase text-white/60">
-              {about.eyebrow}
-            </p>
+    <span className="inline-flex items-center rounded-full border border-primary-200 bg-white px-3 py-1 text-xs font-semibold text-neutral-800">
+      {children}
+    </span>
+  )
+}
 
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-              {about.title}
+export default function Hero({ hero }) {
+  return (
+    <section id="home" className="relative">
+      <div className="pointer-events-none absolute inset-0 hero-wash" />
+
+      <Container className="py-16 sm:py-20 lg:py-24">
+        <div className="grid items-center gap-12 lg:grid-cols-12">
+          {/* Left */}
+          <div className="lg:col-span-7">
+            {/* <div className="inline-flex items-center gap-2 rounded-full border border-primary-200 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-700">
+              <span className="h-2 w-2 rounded-full bg-primary-700" />
+              {hero.eyebrow}
+            </div> */}
+
+            <h1 className="mt-6 font-display text-4xl font-black tracking-tight text-neutral-900 sm:text-5xl lg:text-5xl">
+              {hero.headline}
             </h1>
 
-            <p className="mt-4 text-lg text-white/70 sm:text-xl">
-              {about.subtitle}
+            <p className="mt-5 max-w-2xl text-base text-neutral-700 sm:text-lg">
+              {hero.subtext}
             </p>
 
-            <div className="mt-8 space-y-4 text-base text-white/70">
-              {about.body.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a
+                href={hero.cta.href}
+                className="inline-flex items-center justify-center rounded-full bg-primary-500 px-6 py-3 text-sm font-semibold text-white hover:bg-primary-600 transition"
+              >
+                {hero.cta.label}
+              </a>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
                 href="#services"
-                className="inline-flex items-center justify-center rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-black hover:bg-white transition"
+                className="inline-flex items-center justify-center rounded-full border border-primary-200 bg-white px-6 py-3 text-sm font-semibold text-neutral-900 hover:bg-neutral-50 transition"
               >
-                Explore services
+                View services
               </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-black/20 px-6 py-3 text-sm font-semibold text-white hover:bg-black/30 transition"
-              >
-                Contact
-              </a>
-              <span className="ml-1 text-xs tracking-[0.22em] uppercase text-white/50">
-                Execution first
-              </span>
             </div>
           </div>
 
-          <div className="lg:col-span-4">
-            <div className="relative overflow-hidden rounded-3xl border border-white/15 bg-black/20 p-6 shadow-glow">
-              <div className="absolute inset-0">
-                <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-white/20 blur-3xl" />
-                <div className="absolute -right-24 top-10 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/25" />
+          {/* Right Card */}
+          <div className="lg:col-span-5">
+            <div className="relative rounded-[2rem] border border-primary-200 bg-white/85 p-6 shadow-glow backdrop-blur-md">
+              {/* floating chips (Influence vibe) */}
+              <div className="absolute -left-4 top-10 hidden lg:block">
+                <div className="rounded-full border border-primary-200 bg-white px-3 py-2 text-xs font-semibold text-neutral-800 shadow">
+                  {hero.card.badge}
+                </div>
+              </div>
+              <div className="absolute -right-5 top-16 hidden lg:block">
+                <div className="rounded-full border border-primary-200 bg-white px-3 py-2 text-xs font-semibold text-neutral-800 shadow">
+                  Faster decisions
+                </div>
+              </div>
+              <div className="absolute -right-6 bottom-12 hidden lg:block">
+                <div className="rounded-full border border-primary-200 bg-white px-3 py-2 text-xs font-semibold text-neutral-800 shadow">
+                  Reduced risk
+                </div>
               </div>
 
-              <div className="relative">
-                <p className="text-xs tracking-[0.22em] uppercase text-white/60">Focus</p>
-                <h2 className="mt-3 text-xl font-semibold tracking-tight">Real delivery, end-to-end.</h2>
-                <p className="mt-3 text-sm text-white/75">
-                  Strategy, design, engineering, and documentation that actually ships.
+              <div className="rounded-3xl border border-primary-100 bg-primary-50 px-5 py-5">
+                <p className="text-xs tracking-[0.22em] uppercase text-neutral-600">Preview</p>
+                <p className="mt-2 font-display text-2xl font-black tracking-tight text-neutral-900">
+                  {hero.card.title}
                 </p>
-
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {['Marketing', 'Technology', 'Operations'].map((tag) => (
-                    <span
-                      key={tag}
-                      className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold text-white/90"
-                    >
-                      {tag}
-                    </span>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {hero.card.chips.map((c) => (
+                    <Chip key={c}>{c}</Chip>
                   ))}
                 </div>
+              </div>
 
-                {/* <div className="mt-6 flex items-center justify-between rounded-2xl border border-white/15 bg-black/20 px-4 py-3">
-                  <p className="text-sm text-white/70">Scroll to see what you get</p>
-                  <div className="h-9 w-6 rounded-full border border-white/25 p-1">
-                    <div className="h-2 w-2 rounded-full bg-white/90 animate-floaty" />
+              <div className="mt-5 space-y-3">
+                {hero.card.bullets.map((b) => (
+                  <div
+                    key={b}
+                    className="flex items-start gap-3 rounded-2xl border border-primary-200 bg-white px-4 py-3"
+                  >
+                    <span className="mt-1.5 inline-flex h-2 w-2 rounded-full bg-primary-700" />
+                    <p className="text-sm text-neutral-800">{b}</p>
                   </div>
-                </div> */}
+                ))}
               </div>
             </div>
           </div>

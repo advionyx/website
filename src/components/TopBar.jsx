@@ -1,44 +1,48 @@
 import Container from './Container'
+import logoDark from '/logo-dark.svg'
 
-export default function TopBar({ isPanelOpen, onTogglePanel }) {
+export default function TopBar({ isPanelOpen, onTogglePanel, email }) {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/15 bg-black/20 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-primary-200/70 bg-white/70 backdrop-blur-xl">
       <Container>
         <div className="flex h-16 items-center justify-between">
-          <a href="#about" className="group inline-flex items-center gap-2">
-            <span className="text-sm font-semibold tracking-[0.22em] uppercase">
+          {/* Left: logo */}
+          <a href="#home" className="inline-flex items-center gap-3">
+            <img src={logoDark} alt="Advionyx" className="h-9 w-9 rounded-xl" />
+            <span className="hidden font-display text-sm font-black tracking-[0.18em] text-neutral-900 sm:inline">
               ADVIONYX
             </span>
-            <span className="h-1.5 w-1.5 rounded-full bg-teal-300 shadow-[0_0_32px_rgba(45,212,191,0.65)]" />
-            <span className="sr-only">Go to about section</span>
           </a>
 
-          <div className="flex items-center gap-3">
-            <nav className="hidden items-center gap-6 text-sm text-white/80 md:flex">
-              <a className="hover:text-white transition" href="#about">
-                About
-              </a>
-              <a className="hover:text-white transition" href="#what-you-get">
-                What you get
-              </a>
-              <a className="hover:text-white transition" href="#services">
-                Services
-              </a>
-              <a className="hover:text-white transition" href="#contact">
-                Contact
-              </a>
-            </nav>
+          {/* Desktop nav (centered) */}
+          <nav className="hidden items-center gap-6 text-sm text-neutral-700 lg:flex">
+            <a className="hover:text-neutral-900 transition" href="#home">Home</a>
+            <a className="hover:text-neutral-900 transition" href="#services">Services</a>
+            <a className="hover:text-neutral-900 transition" href="#advisor">Advisors</a>
+            {/* <a className="hover:text-neutral-900 transition" href="#what-you-get">What you get</a> */}
+            <a className="hover:text-neutral-900 transition" href="#about">About</a>
+            <a className="hover:text-neutral-900 transition" href="#contact">Contact</a>
+          </nav>
+
+          {/* Right: CTA (desktop) + Menu (mobile) */}
+          <div className="flex items-center gap-2">
+            <a
+              href={`mailto:${email}`}
+              className="hidden items-center justify-center rounded-full bg-primary-500 px-5 py-2 text-sm font-semibold text-white hover:bg-primary-600 transition lg:inline-flex"
+            >
+              Talk to us
+            </a>
 
             <button
               type="button"
               onClick={onTogglePanel}
               aria-haspopup="dialog"
               aria-expanded={isPanelOpen}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium tracking-wide text-white hover:bg-white/10 transition"
+              className="inline-flex items-center gap-2 rounded-full border border-primary-200 bg-white px-4 py-2 text-sm font-semibold text-neutral-900 hover:bg-neutral-50 transition lg:hidden"
             >
               <span>{isPanelOpen ? 'Close' : 'Menu'}</span>
-              <span className="text-white/40">/</span>
-              <span className="text-white/70">☰</span>
+              <span className="text-neutral-400">/</span>
+              <span className="text-neutral-600">☰</span>
             </button>
           </div>
         </div>
