@@ -1,6 +1,6 @@
 export default function SectionHeader({ eyebrow, title, subtitle }) {
   return (
-    <div >
+    <div className="text-center" >
       {eyebrow ? (
         <p className="text-xs tracking-[0.22em] uppercase text-neutral-600">{eyebrow}</p>
       ) : null}

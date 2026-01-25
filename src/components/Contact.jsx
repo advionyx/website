@@ -2,8 +2,8 @@ import Container from './Container'
 
 export default function Contact({ email }) {
   return (
-    <section id="contact" className="relative border-t border-primary-200/70">
-      <Container className="py-16 sm:py-20">
+    <section id="contact" className="relative">
+      <Container className="py-12 sm:py-16">
         <div className="rounded-3xl border border-primary-200 bg-white/85 p-8 shadow-glow backdrop-blur-md sm:p-10">
           <p className="text-xs tracking-[0.22em] uppercase text-neutral-600">CONTACT US</p>
 

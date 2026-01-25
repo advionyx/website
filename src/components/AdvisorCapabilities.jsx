@@ -3,7 +3,7 @@ import SectionHeader from './SectionHeader'
 
 export default function AdvisorCapabilities({ advisor }) {
   return (
-    <section id="advisor" className="relative border-t border-primary-200/70">
+    <section id="advisor" className="relative">
       <Container className="py-16 sm:py-20">
         <SectionHeader eyebrow={advisor.eyebrow} title={advisor.title} subtitle={advisor.body} />
 

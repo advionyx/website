@@ -4,7 +4,7 @@ import ServiceLine from './ServiceLine'
 
 export default function Services({ services = [] }) {
   return (
-    <section id="services" className="relative border-t border-primary-200/70">
+    <section id="services" className="relative">
       <Container className="py-16 sm:py-20">
         <SectionHeader
           eyebrow="SERVICE LINES"

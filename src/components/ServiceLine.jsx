@@ -12,11 +12,11 @@ export default function ServiceLine({ service }) {
       <div className="px-5 py-5 sm:px-6 sm:py-6">
         {/* MOBILE: stack, DESKTOP: side-by-side */}
         <div className="flex flex-col gap-2 sm:flex-row sm:gap-5">
-          <p className="text-xs tracking-[0.22em] uppercase text-neutral-600 sm:min-w-[3.5rem]">
+        {/* <p className="text-xs tracking-[0.22em] uppercase text-neutral-600 sm:min-w-[3.5rem]">
             {service?.number}
-          </p>
+          </p>   */}
 
-          <div className="flex-1">
+          <div className="flex-1 text-center">
             <h3 className="font-display text-xl font-black tracking-tight text-neutral-900 sm:text-2xl">
               {service?.title}
             </h3>

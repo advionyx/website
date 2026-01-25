@@ -3,7 +3,7 @@ import SectionHeader from './SectionHeader'
 
 export default function AboutSection({ about }) {
   return (
-    <section id="about" className="relative border-t border-primary-200/70">
+    <section id="about" className="relative">
       <Container className="py-16 sm:py-20">
         <SectionHeader
           eyebrow={about.eyebrow}
