@@ -62,6 +62,15 @@ module.exports = {
           100: '#F1FAF5',
         },
       },
+    keyframes: {
+      fadeIn: {
+        '0%': { opacity: 0, transform: 'translateY(6px)' },
+        '100%': { opacity: 1, transform: 'translateY(0)' },
+      },
+    },
+    animation: {
+      fadeIn: 'fadeIn 300ms ease-out',
+    },
       boxShadow: {
         glow: '0 0 0 1px rgba(64,120,214,0.10), 0 18px 60px rgba(16,75,177,0.10)',
       },
