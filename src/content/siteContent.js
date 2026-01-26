@@ -123,11 +123,12 @@ export const about = {
   eyebrow: 'ABOUT US',
   title: 'We Execute. We Don’t Just Advise.',
   body: [
-    'We’re a consulting studio partnering with early-stage startups and innovation teams at critical build and scale moments.',
-    'We bring cross-functional expertise on demand—without the cost or rigidity of permanent teams.',
-    'No bloated headcount. No slide-only consulting. Just real delivery.',
-    'From product and engineering to data, design, and regulatory, we lead real business and product execution end-to-end.',
-    'Alongside industry work, we run a venture & innovation pipeline turning high-potential ideas—and standout student projects—into venture-ready products.',
-    'Have a problem worth building? Let’s execute.',
+    "We work with startups, innovation teams, and academic groups at critical build and scale stages.",
+    "Our advisors plug in on-demand to deliver real execution across product, engineering, data, design, and regulatory.",
+    "Alongside industry work, we help strong ideas and student projects evolve into venture-ready products."
+    // "Execution-first consulting for teams that need progress, not decks.",
+    // "We work with startups, innovation teams, and academic groups at critical build and scale stages.",
+    // "Our advisors plug in on-demand to deliver real execution across product, engineering, data, design, and regulatory.",
+    // "Alongside industry work, we help strong ideas and student projects evolve into venture-ready products."
   ],
 }

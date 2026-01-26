@@ -15,7 +15,7 @@ export default function AboutSection({ about }) {
           <div className="grid gap-8 lg:grid-cols-12">
             <div className="lg:col-span-4">
               <p className="text-xs tracking-[0.22em] uppercase text-neutral-600">
-                About
+                We are
               </p>
               <p className="mt-3 text-base font-semibold text-neutral-900">
                 Execution-first consulting for teams that need progress, not decks.
